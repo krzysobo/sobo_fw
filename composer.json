@@ -1,0 +1,38 @@
+{
+    "name": "krzysobo/sobo_fw_test_app",
+    "description": "Just a test app for the Sobo_Fw framework.",
+
+    "autoload": {
+        "psr-4": {
+            "": "lib",
+            "App\\": "src/app",
+            "App\\Config\\": "src/app/config",
+            "App\\Views\\": "src/app/views",
+            "App\\Utils\\": "src/app/utils"
+        },
+        "files": [
+
+        ]
+        
+    },
+
+
+    "require": {
+        "php": ">=8.2",
+        "symfony/http-foundation": "^7.2",
+        "krzysobo/sobo_phprouter": "^1.0.1",
+        "krzysobo/soboutils_php": "dev-main"
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/krzysobo/sobo_phprouter"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/krzysobo/soboutils_php"
+        }
+    ]    
+
+}

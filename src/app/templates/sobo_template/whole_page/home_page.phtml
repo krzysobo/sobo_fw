@@ -1,0 +1,13 @@
+<html>
+    <head><title><?= $title ?></title></head>
+    <body>
+
+    <?=
+        // we can call functions in the templates wherever and whenever we want to 
+        App\Views\get_menu() ?>
+
+        HOME PAGE for non-logged-in users <br />
+        
+        APP TOP DIR: <?= App\AppMain::instance()->getProjectRootPath(); ?>
+    </body>
+</html>
