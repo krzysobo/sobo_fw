@@ -1,8 +1,8 @@
 <?php
 namespace App\Views;
 
-use App\AppKernel;
-use App\AppMain;
+use Sobo_fw\Utils\App\AppKernel;
+use Sobo_fw\Utils\App\AppMain;
 use App\Utils\LoginHelper;
 use Soboutils\SoboTemplate;
 use Symfony\Component\HttpFoundation\Response;

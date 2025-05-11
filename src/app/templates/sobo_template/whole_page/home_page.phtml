@@ -1,4 +1,7 @@
-<html>
+<?php 
+use Sobo_fw\Utils\App\AppMain;
+
+?><html>
     <head><title><?= $title ?></title></head>
     <body>
 
@@ -8,6 +11,6 @@
 
         HOME PAGE for non-logged-in users <br />
         
-        APP TOP DIR: <?= App\AppMain::instance()->getProjectRootPath(); ?>
+        APP TOP DIR: <?= AppMain::instance()->getProjectRootPath(); ?>
     </body>
 </html>

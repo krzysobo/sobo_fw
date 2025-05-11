@@ -1,7 +1,7 @@
 <?php
 
-use App\AppMain;
-use App\AppRouter;
+use Sobo_fw\Utils\App\AppMain;
+use Sobo_fw\Utils\App\AppRouter;
 use App\Config\Routes;
 use Soboutils\Path;
 
@@ -18,7 +18,8 @@ $loader = require __DIR__ . '/../vendor/autoload.php';
 // containing them HERE OR add them
 //  to composer.json -> autoload -> "files": [.....] (paths only).
 //      $loader->add DOES NOT WORK ON PATHS FOR FUNCTION THINGS.
-require_once __DIR__ . "/../src/app/views/sobotemplate_function_views_sf_response.php";
+// require_once __DIR__ . "/../src/app/views/sobotemplate_function_views_sf_response.php";
+require_once __DIR__ . "/../src/app/views/sobotemplate_function_views.php";
 // $loader->add('App\\Views\\Test\\Test', __DIR__.'/../src/app/views/Test.php');
 // ============================== /AUTOLOADER INFO ================================
 

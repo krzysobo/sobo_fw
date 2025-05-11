@@ -3,7 +3,7 @@
 namespace App\Config;
 
 class Routes {
-    protected static $routes_list = [
+    protected static $routesList = [
         ['route' => '/', 'method' => 'GET', 'view' => 'App\Views\home_page'],
         ['route' => '/about-us', 'method' => 'GET', 'view' => 'App\Views\about_us'],
         ['route' => '/help', 'method' => 'GET', 'view' => 'App\Views\help'],
@@ -14,6 +14,6 @@ class Routes {
     ];
 
     public static function getRoutesList() {
-        return self::$routes_list;
+        return self::$routesList;
     }    
 }

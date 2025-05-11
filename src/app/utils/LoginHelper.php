@@ -5,13 +5,13 @@ use Soboutils\SoboSingletonTrait;
 
 class LoginHelper
 {
-    protected bool $is_logged_in = false;
+    protected bool $isLoggedIn = false;
 
     use SoboSingletonTrait;
 
     public function isLoggedIn()
     {
-        return $this->is_logged_in;
+        return $this->isLoggedIn;
     }
 
     public function logIn($user_data)
@@ -25,7 +25,7 @@ class LoginHelper
     }
 
     public function setLoggedIn($is_logged_in) {
-        $this->is_logged_in = $is_logged_in;
+        $this->isLoggedIn = $is_logged_in;
     }
 
 }

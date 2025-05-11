@@ -1,8 +1,8 @@
 <?php
 namespace App\Views;
 
-use App\AppMain;
-use App\AppKernel;
+use Sobo_fw\Utils\App\AppMain;
+use Sobo_fw\Utils\App\AppKernel;
 use Soboutils\SoboTemplate;
 
 // You can use both class-based and function-based views and mix them as you wish.

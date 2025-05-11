@@ -21,7 +21,8 @@
         "php": ">=8.2",
         "symfony/http-foundation": "^7.2",
         "krzysobo/sobo_phprouter": "^1.0.1",
-        "krzysobo/soboutils_php": "dev-main"
+        "krzysobo/soboutils_php": "dev-main",
+        "catfan/medoo": "dev-master"
     },
     "minimum-stability": "dev",
     "repositories": [

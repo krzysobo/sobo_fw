@@ -1,10 +1,12 @@
 <?php
 namespace App\Views;
 
-use App\AppMain;
+use Sobo_fw\Utils\App\AppMain;
 use App\Utils\LoginHelper;
 use Soboutils\SoboTemplate;
 use Symfony\Component\HttpFoundation\Response;
+
+require_once "menu.php";
 
 // You can use both class-based and function-based views and mix them as you wish.
 // Class-based views are just COLLECTIONS.
@@ -20,15 +22,6 @@ function get_state()
     $lh->setLoggedIn($logged_in);
 }
 
-
-function get_menu()
-{
-    $res = SoboTemplate::instance()->renderPathArray(
-        [AppMain::instance()->getTemplatePath(),
-            'sobo_template', 'whole_page', 'parts', 'menu.phtml'],
-        []);
-    return $res;
-}
 
 function home_page()
 {
