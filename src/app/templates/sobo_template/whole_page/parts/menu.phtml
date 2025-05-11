@@ -1,0 +1,21 @@
+
+<ul>
+    <?php foreach($items as $item): ?>
+        <?php if($item[2]): ?>
+            <li><b><a href="<?= $item[0]; ?> "><?= $item[1]; ?></a></b></li>
+        <?php else: ?>
+            <li><a href="<?= $item[0]; ?> "><?= $item[1]; ?></a></li>
+        <?php endif; ?>
+        
+    <?php endforeach; ?>
+    <!-- <li><a href="/">Home Page</a></li>
+    <li><a href="/about-us">About Us</a></li>
+    <li><a href="/help">Help</a></li>
+    <li><a href="/contact-us">Contact Us</a></li>
+    <li><a href="/privacy-policy">Privacy Policy</a></li> -->
+    <?php App\Views\get_state(); if (App\Utils\LoginHelper::getInstance()->isLoggedIn()):
+        echo '<li><a href="/log-out">Log Out</a></li>';
+    else:
+        echo '<li><a href="/log-in">Log In</a></li>';
+    endif; ?>
+</ul>

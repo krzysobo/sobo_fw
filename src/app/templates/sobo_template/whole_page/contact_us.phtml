@@ -1,7 +1,7 @@
 <html>
     <head><title><?= $title ?></title></head>
     <body>
-        <?php require_once "menu.phtml"; ?>
+        <?php $items = App\Views\get_menu_items(); require_once "parts/menu.phtml"; ?>
     <p>CONTACT US!<br />. Lorem ipsum dolor sit amet...</p>
     </body>
 </html>

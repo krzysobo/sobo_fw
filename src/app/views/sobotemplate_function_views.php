@@ -20,11 +20,12 @@ function get_state()
     $lh->setLoggedIn($logged_in);
 }
 
+
 function get_menu()
 {
     $res = SoboTemplate::instance()->renderPathArray(
         [AppMain::instance()->getTemplatePath(),
-            'sobo_template', 'whole_page', 'menu.phtml'],
+            'sobo_template', 'whole_page', 'parts', 'menu.phtml'],
         []);
     return $res;
 }

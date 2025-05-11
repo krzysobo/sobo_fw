@@ -1,11 +1,13 @@
 <?php
 namespace App\Views;
 
-use App\AppMain;
 use App\AppKernel;
+use App\AppMain;
 use App\Utils\LoginHelper;
 use Soboutils\SoboTemplate;
 use Symfony\Component\HttpFoundation\Response;
+
+require_once "menu.php";
 
 // You can use both class-based and function-based views and mix them as you wish.
 // Class-based views are just COLLECTIONS.
@@ -15,25 +17,16 @@ use Symfony\Component\HttpFoundation\Response;
 function get_state()
 {
 
-    $lh = LoginHelper::getInstance();
+    $lh  = LoginHelper::getInstance();
     $req = AppKernel::instance()->getRequest();
-    echo "REQ PATH INFO ".$req->getPathInfo();
+    echo "REQ PATH INFO " . $req->getPathInfo();
 
     $logged_in = (isset($_COOKIE['logged_in'])) ? $_COOKIE['logged_in'] : false;
     // echo "logged in".$logged_in;
     $lh->setLoggedIn($logged_in);
 
-
 }
 
-function get_menu()
-{
-    $res = SoboTemplate::instance()->renderPathArray(
-        [AppMain::instance()->getTemplatePath(),
-            'sobo_template', 'whole_page', 'menu.phtml'],
-        []);
-    return $res;
-}
 
 function home_page()
 {
