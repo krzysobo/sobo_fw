@@ -9,6 +9,7 @@ use Sobo_fw\Utils\Db\DbConnectionStore;
 use Sobo_fw\Utils\Form\Validator;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Sobo_fw\Utils\Auth\Password;
+use Sobo_fw\Utils\Db\DbHelper;
 
 function blabla()
 {
@@ -16,12 +17,6 @@ function blabla()
 }
 
 
-function current_date_str_for_db() {
-    date_default_timezone_set('UTC');
-    $dt         = new \DateTime();
-    $dt_now_str = $dt->format('Y-m-d H:i:s.v O');
-    return $dt_now_str;
-}
 
 
 
@@ -130,7 +125,7 @@ class AdminUserApi
 
         $pwdHash = Password::makeDjangoCompatiblePasswordHash($password);
 
-        $dt_now_str = current_date_str_for_db();
+        $dt_now_str = DbHelper::currentDateStrForDb();
         $data_out = [
             'email'             => $email,
             'first_name'        => $first_name,
@@ -208,7 +203,7 @@ class AdminUserApi
             return new JsonResponse(['errors' => $errors], 400);
         }
 
-        $dt_now_str = $dt_now_str = current_date_str_for_db();
+        $dt_now_str = $dt_now_str = DbHelper::currentDateStrForDb();
         $data_out = [
             'email'             => ($email_change_requested) ? $req_array['email'] : $user_in_db['email'],
             'first_name'        => Validator::fieldExistsFilledOrEmpty('first_name', $req_array) ? $req_array['first_name'] : $user_in_db['first_name'],

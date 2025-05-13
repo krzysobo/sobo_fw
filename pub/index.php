@@ -25,6 +25,8 @@ $loader = require __DIR__ . '/../vendor/autoload.php';
 //      $loader->add DOES NOT WORK ON PATHS FOR FUNCTION THINGS.
 // require_once __DIR__ . "/../src/app/views/sobotemplate_function_views_sf_response.php";
 require_once __DIR__ . "/../src/app/views/sobotemplate_function_views.php";
+require_once __DIR__ . "/../src/app/views/Api/AdminUserApi.php";
+require_once __DIR__ . "/../src/app/views/Api/UserApi.php";
 // $loader->add('App\\Views\\Test\\Test', __DIR__.'/../src/app/views/Test.php');
 // ============================== /AUTOLOADER INFO ================================
 

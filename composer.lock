@@ -618,7 +618,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "krzysobo/soboutils_php": 20,
-        "catfan/medoo": 20
+        "catfan/medoo": 20,
+        "ramsey/uuid": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

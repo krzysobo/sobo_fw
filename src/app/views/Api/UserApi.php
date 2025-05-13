@@ -30,6 +30,7 @@ function user_reset_password_confirm()
 
 function user_login()
 {
+    echo "ABC ABC ABC\n\n"; 
     $errors = [];
     $conn = DbConnectionStore::instance()->getDbConnectionByHandle(
         AppMain::instance()->getDefaultDbConnectionHandle())->getConnection();
@@ -73,7 +74,8 @@ function user_login()
     }
 
     $status = UserHelper::getUserStatus($user_in_db['is_active']);
-    $token = '';
+    $token = UserHelper::makeDjangoCompatibleAuthUserToken();
+    UserHelper::instance()->storeDjangoCompatibleUserToken($user_in_db['id'], $token, 'authtoken_token', $conn);
 
     /*
         .venv/lib/python3.9/site-packages/rest_framework/authtoken/models.py

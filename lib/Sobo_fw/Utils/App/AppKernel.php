@@ -30,6 +30,8 @@ class AppKernel
             $callable = $funcname;
         }
 
+        print_r($callable);
+
         if (! is_callable($callable)) {
             throw new \BadFunctionCallException("Router error - a callable for the route does not exist.");
         }

@@ -9,6 +9,7 @@
             "App\\Config\\": "src/app/config",
             "App\\Db\\": "src/app/db",
             "App\\Views\\": "src/app/views",
+            "App\\Views\\Api\\": "src/app/views/Api",
             "App\\Utils\\": "src/app/utils"
         },
         "files": [

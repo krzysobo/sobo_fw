@@ -16,17 +16,14 @@ class Routes {
         // ['route' => '/api/v1/admin/user/', 'method' => 'GET', 'view' => ],
         // ['route' => '/api', 'method' => 'GET', 'view' => 'App\Views\help'],
         ['route' => '/api/v1/admin/user', 'method' => 'GET', 'view' => ['App\Views\Api\AdminUserApi', 'getUserList']],
+        ['route' => '/api/v1/admin/user', 'method' => 'GET', 'view' => ['App\Views\Api\AdminUserApi', 'getUserList']],
         ['route' => '/api/v1/admin/user/id/$id', 'method' => 'GET', 'view' => ['App\Views\Api\AdminUserApi', 'getUser']],
         ['route' => '/api/v1/admin/user/id/$id', 'method' => 'PUT', 'view' => ['App\Views\Api\AdminUserApi', 'updateUser']],
         ['route' => '/api/v1/admin/user/id/$id', 'method' => 'DELETE', 'view' => ['App\Views\Api\AdminUserApi', 'deleteUser']],
         ['route' => '/api/v1/admin/user/create', 'method' => 'POST', 'view' => ['App\Views\Api\AdminUserApi', 'createUser']],
+        
+        ['route' => '/api/v1/user/login', 'method' => 'POST', 'view' => 'App\Views\Api\user_login'],
 
-        // private _api_prefix = 'http://localhost:3000/api/v1/';
-        // private _api_url_admin_user_get = this._api_prefix + "admin/user/id/{id}/";
-        // private _api_url_admin_user_update = this._api_prefix + "admin/user/id/{id}/";
-        // private _api_url_admin_user_delete = this._api_prefix + "admin/user/id/{id}/";
-        // private _api_url_admin_user_create = this._api_prefix + "admin/user/create/";
-        // private _api_url_admin_user_list = this._api_prefix + "admin/user/";        
     ];
 
     public static function getRoutesList() {
