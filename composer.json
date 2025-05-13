@@ -7,6 +7,7 @@
             "": "lib",
             "App\\": "src/app",
             "App\\Config\\": "src/app/config",
+            "App\\Db\\": "src/app/db",
             "App\\Views\\": "src/app/views",
             "App\\Utils\\": "src/app/utils"
         },
@@ -22,7 +23,8 @@
         "symfony/http-foundation": "^7.2",
         "krzysobo/sobo_phprouter": "^1.0.1",
         "krzysobo/soboutils_php": "dev-main",
-        "catfan/medoo": "dev-master"
+        "catfan/medoo": "dev-master",
+        "ramsey/uuid": "5.x-dev"
     },
     "minimum-stability": "dev",
     "repositories": [

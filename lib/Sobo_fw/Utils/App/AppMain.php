@@ -6,6 +6,7 @@
 
 namespace Sobo_fw\Utils\App;
 
+use Sobo_fw\Utils\Db\DbConnectionStore;
 use Soboutils\ExactAccessorMethodTrait;
 use Soboutils\Path;
 use Soboutils\SoboSingletonTrait;
@@ -54,6 +55,8 @@ class AppMain
      * @var
      */
     protected $templatePath;
+   
+    protected $defaultDbConnectionHandle;
 
     function __call($funcname, $args)
     {

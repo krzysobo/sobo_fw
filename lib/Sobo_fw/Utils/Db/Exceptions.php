@@ -4,9 +4,13 @@
  * @license MIT
  */
 
-namespace Sobo_fw\Utils\Config;
+namespace Sobo_fw\Utils\Db;
 
 class DbConfigNotFoundException extends \Exception
+{
+
+}
+class DbConnectionNotFoundException extends \Exception
 {
 
 }

@@ -4,13 +4,14 @@
  * @license MIT
  */
 
-namespace Sobo_fw\Utils\Config;
+namespace Sobo_fw\Utils\Db;
 
 use Soboutils\FileNotFoundException;
 use Soboutils\SoboSingletonTrait;
-use Sobo_fw\Utils\Config\DbConfigContainer;
-use Sobo_fw\Utils\Config\DbConfigNotFoundException;
-use Sobo_fw\Utils\Config\IncorrectDbConfigException;
+use Sobo_fw\Utils\Db\DbConfigContainer;
+use Sobo_fw\Utils\Db\DbConfigNotFoundException;
+use Sobo_fw\Utils\Db\IncorrectDbConfigException;
+
 
 class DbConfigHandler
 {

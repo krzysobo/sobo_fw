@@ -1,9 +1,14 @@
 <?php
 
+use App\Db\DbHelper;
 use Sobo_fw\Utils\App\AppMain;
 use Sobo_fw\Utils\App\AppRouter;
 use App\Config\Routes;
+use Sobo_fw\Utils\Db\DbConfigHandler;
+use Sobo_fw\Utils\Db\DbConnectionStore;
 use Soboutils\Path;
+
+use App\Views\Api\AdminUserApi;
 
 error_reporting(E_ALL);
 ini_set("display_errors", "1");
@@ -23,6 +28,7 @@ require_once __DIR__ . "/../src/app/views/sobotemplate_function_views.php";
 // $loader->add('App\\Views\\Test\\Test', __DIR__.'/../src/app/views/Test.php');
 // ============================== /AUTOLOADER INFO ================================
 
+// ========= application BOOTSTRAPPING ==========
 $pub_dir    = __DIR__;
 $root_dir   = realpath(Path::joinPaths($pub_dir, '..'));
 $app_dir    = realpath(Path::joinPaths($root_dir, 'src/app'));
@@ -36,4 +42,13 @@ $app->setAppPath($app_dir);
 $app->setTemplatePath($tpl_dir);
 $app->setConfigPath($config_dir);
 
+
+$db_config = DbConfigHandler::instance()->getDbConfigFromIni(Path::joinPaths($config_dir,'db.ini'), 'db_sobosite');
+$conn_medoo = DbHelper::instance()->getConnectionForDbConfig('Sobo_fw\Utils\Db\DbConnectionMedoo', $db_config);
+$conn_pdo = DbHelper::instance()->getConnectionForDbConfig('Sobo_fw\Utils\Db\DbConnectionPDO', $db_config);
+DbConnectionStore::instance()->addDbConnection('medoo', $conn_medoo);
+DbConnectionStore::instance()->addDbConnection('pdo', $conn_pdo);
+$app->setDefaultDbConnectionHandle('medoo');
+
 AppRouter::instance()->parseRoutesList(Routes::getRoutesList());
+// ========= /application BOOTSTRAPPING ==========

@@ -1,0 +1,13 @@
+[db_sobosite]
+db_name=
+db_type=pgsql
+db_host=localhost
+db_port=5432
+db_user=
+db_pass=
+table_prefix=
+charset=
+charset=
+collation=
+
+

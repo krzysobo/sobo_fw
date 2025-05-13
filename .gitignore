@@ -1,1 +1,2 @@
 vendor/*
+src/app/config/*.ini

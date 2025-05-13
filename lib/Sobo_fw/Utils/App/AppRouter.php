@@ -6,31 +6,29 @@
 
 namespace Sobo_fw\Utils\App;
 
-use Soboutils\ExactAccessorMethodTrait;
-use Soboutils\Path;
 use Soboutils\SoboSingletonTrait;
-use Soboutils\PropertyNotFoundException;
 use Sobo_PhpRouter\Router;
 
 class AppRouter
 {
     use SoboSingletonTrait;
 
-
-    public function parseRoutesList($routes_list) {
+    public function parseRoutesList($routes_list)
+    {
         $router = Router::getInstance();
 
         $router->setAllowedRouteEnds([Router::ROUTE_END_CALLBACK]);
         $router->setAfterCallbackCallable(function () {});
-        
+
         foreach ($routes_list as $route) {
-            $func = strtolower($route['method']);
-            call_user_func_array([$router, $func], [
+            $http_method_func = strtolower($route['method']);
+            call_user_func_array([$router, $http_method_func], [
                 $route['route'], function () use ($route) {
-                    AppKernel::instance()->showFuncPage($route['view']);
+                    $func_args = func_get_args();
+                    AppKernel::instance()->showFuncPage($route['view'], $func_args);
                 }]
             );
         }
-        
+
     }
 }
